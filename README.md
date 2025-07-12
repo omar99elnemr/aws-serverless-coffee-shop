@@ -26,8 +26,7 @@ Optionally, Cloudflare and AWS Certificate Manager can be used to add a custom d
 ## Step-by-Step Guide
 
 ### Step 1: Create DynamoDB Table
-![Dynamo-table](aws-serverless-coffee-shop
-\img\DynamoDB.png)
+![Dynamo-table](img/DynamoDB.png)
 1. Navigate to the DynamoDB section in the AWS Console
 2. Create a table named `CoffeeShop` with `coffeeId` as the partition key
 3. Add a sample item for testing:
@@ -42,8 +41,7 @@ Optionally, Cloudflare and AWS Certificate Manager can be used to add a custom d
 ```
 
 ### Step 2: Create IAM Role for Lambda Functions
-1[IAM-Role](aws-serverless-coffee-shop
-\img\IAM-Role.png)
+1[IAM-Role](img/IAM-Role.png)
 Create an IAM role named `CoffeeShopRole` with the following permissions:
 
 - CRUD access to the CoffeeShop DynamoDB table
@@ -79,8 +77,7 @@ Create an IAM role named `CoffeeShopRole` with the following permissions:
 ```
 
 ### Step 3: Create Lambda Layer and Lambda Functions
-![Lambda-funcs](aws-serverless-coffee-shop
-\img\Lambda.png)
+![Lambda-funcs](img/Lambda.png)
 #### Create a Lambda Layer:
 
 1. Create a directory named `nodejs`
@@ -174,8 +171,7 @@ export const getCoffee = async (event) => {
 Similar implementations exist for `createCoffee`, `updateCoffee`, and `deleteCoffee` (refer to the full code in the query for details).
 
 ### Step 4: Create API Gateway to Expose Lambda Functions
-![api-gateway](aws-serverless-coffee-shop
-\img\api-gateway.webp)
+![api-gateway](img/api-gateway.webp)
 1. Create an HTTP API Gateway
 2. Add the following routes:
    - `GET /coffee` → `getCoffee`
@@ -186,8 +182,7 @@ Similar implementations exist for `createCoffee`, `updateCoffee`, and `deleteCof
 3. Test the APIs using tools like Postman or Thunderclient
 
 ### Step 5: Create Cognito UserPool and API Gateway Authorizer
-![cognito](aws-serverless-coffee-shop
-\img\cognito.webp)
+![cognito](img/cognito.webp)
 1. Create a Cognito UserPool with a public client (SPA App)
 2. Configure it as a JWT authorizer for all API Gateway routes
 
@@ -195,23 +190,18 @@ Similar implementations exist for `createCoffee`, `updateCoffee`, and `deleteCof
 1. Create a React app and configure it with Cognito. Sample files are available at: https://github.com/omar99elnemr/aws-serverless-coffee-shop/tree/main/FrontendWithAuth
 2. Create an S3 bucket
 3. Build the React app and upload the `dist` folder to the S3 bucket
-![S3-bucket](aws-serverless-coffee-shop
-\img\bucket.png)
+![S3-bucket](img/bucket.png)
 
 ### Step 7: Create Cloudfront Distribution with Behaviors for S3 and API Gateway
-![cloudfront](aws-serverless-coffee-shop
-\img\cloudfront.png)
+![cloudfront](img/cloudfront.png)
 1. Create a Cloudfront distribution with the S3 bucket as the origin, using Origin Access Control (OAC) for private bucket access
 2. Add another origin for the API Gateway
 3. Create a behavior to redirect `/coffee*` routes to the API Gateway origin
 
 ### Step 8: Test App
-![Login-test](aws-serverless-coffee-shop
-\img\test0.png)
-![Login-test](aws-serverless-coffee-shop
-\img\test1.png)
-![Login-test](aws-serverless-coffee-shop
-\img\test2.png)
+![Login-test](img/test0.png)
+![Login-test](img/test1.png)
+![Login-test](img/test2.png)
 
 ### ~Step 9~: Attach Custom Domain Name to CDN (Optional)
 
@@ -225,8 +215,7 @@ To avoid unnecessary costs, delete all created resources:
 ![Delete-Resource](aws-serverless-coffee-shop
 aws-serverless-coffee-shop
 aws-serverless-coffee-shop
-\aws-serverless-coffee-shop
-\img\delete-resources.png)
+\img/delete-resources.png)
 - Cloudfront distribution
 - DynamoDB table
 - API Gateway
