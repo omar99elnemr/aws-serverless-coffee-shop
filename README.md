@@ -11,8 +11,6 @@ AWS-managed serverless services like Lambda, Cognito, and API Gateway scale down
 ## Architecture Overview
 
 ![AWS Serverless Architecture](aws-serverless-coffee-shop
-aws-serverless-coffee-shop
-\aws-serverless-coffee-shop
 \img\architecture.webp)
 
 The application architecture consists of:
