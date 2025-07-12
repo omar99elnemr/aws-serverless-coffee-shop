@@ -2,7 +2,7 @@
 
 This project demonstrates how to build a serverless application for a coffee shop using AWS services. The coffee shop owner can authenticate using AWS Cognito and manage inventory (perform CRUD operations) through a React frontend.
 
-**Check App:** [url]
+~**Check App:** [url]~
 
 ## Why Serverless?
 
@@ -199,6 +199,7 @@ Similar implementations exist for `createCoffee`, `updateCoffee`, and `deleteCof
 3. Create a behavior to redirect `/coffee*` routes to the API Gateway origin
 
 ### Step 8: Test App
+
 ![Login-test](img/test0.png)
 ![Login-test](img/test1.png)
 ![Login-test](img/test2.png)
@@ -212,10 +213,7 @@ Similar implementations exist for `createCoffee`, `updateCoffee`, and `deleteCof
 ### Step 9: Clean Up All Resources
 
 To avoid unnecessary costs, delete all created resources:
-![Delete-Resource](aws-serverless-coffee-shop
-aws-serverless-coffee-shop
-aws-serverless-coffee-shop
-\img/delete-resources.png)
+![Delete-Resource](mg/delete-resources.png)
 - Cloudfront distribution
 - DynamoDB table
 - API Gateway
