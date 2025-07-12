@@ -212,8 +212,8 @@ Similar implementations exist for `createCoffee`, `updateCoffee`, and `deleteCof
 
 ### Step 9: Clean Up All Resources
 
-To avoid unnecessary costs, delete all created resources:
-![Delete-Resource](mg/delete-resources.png)
+To avoid unnecessary costs, delete all created resources:  
+![Delete-Resource](img/delete-resources.png)
 - Cloudfront distribution
 - DynamoDB table
 - API Gateway
